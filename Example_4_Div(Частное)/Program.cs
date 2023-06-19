@@ -1,4 +1,10 @@
 ﻿int numberA = 30;
 int numberB = 5;
-int summ = numberA/numberB;
+int div = numberA/numberB;
+Console.Write("Частное целоых чисел = ");
+Console.WriteLine(div);
+double numberC = 31.5;
+double numberD = 5.3;
+double summ = numberC/numberD;
+Console.Write("Частное дробных чисел = ");
 Console.WriteLine(summ);

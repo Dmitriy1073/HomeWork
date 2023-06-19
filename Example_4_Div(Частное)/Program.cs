@@ -1,10 +1,14 @@
-﻿int numberA = 30;
-int numberB = 5;
+﻿int numberA = new Random().Next(1,11);
+Console.WriteLine(numberA);
+int numberB = new Random().Next(1,11);
+Console.WriteLine(numberB);
 int div = numberA/numberB;
 Console.Write("Частное целоых чисел = ");
 Console.WriteLine(div);
-double numberC = 31.5;
-double numberD = 5.3;
+double numberC = 0.1*new Random().Next(10,101);
+Console.WriteLine(numberC);
+double numberD = 0.1*new Random().Next(10,101);
+Console.WriteLine(numberD);
 double summ = numberC/numberD;
 Console.Write("Частное дробных чисел = ");
 Console.WriteLine(summ);

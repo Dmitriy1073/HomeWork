@@ -288,3 +288,50 @@ Join_Fibonacci(array_Join, array,array_n,n);
 Console.WriteLine("Общий массив последовательности Фибоначчи/НегаФибоначчи");
 PrintArrayForm(array_Join);
 
+//задача 40 - HARD необязательная. На вход программы подаются три 
+//целых положительных числа. Определить , является ли это сторонами 
+//треугольника. Если да, то вывести всю информацию по нему - площадь, 
+//периметр, значения углов треугольника в градусах, является ли он 
+//прямоугольным, равнобедренным, равносторонним.
+Console.WriteLine("Введите сторону А треугольника");
+double A=Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите сторону B треугольника");
+double B=Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите сторону C треугольника");
+double C=Convert.ToDouble(Console.ReadLine());
+// решение при помощи функции (см.ниже)
+bool flag=Triangle(A,B,C);
+if (flag=true ) Stat_Triangle(A,B,C);
+else Console.WriteLine("Треугольника c такими сторонами АВС не существует");
+
+
+
+bool Triangle(double a,double b, double c )// проверяет возможность существования треугольника с заданными сторонами
+{
+    bool flag=false;
+    if(a+b>c&&a+c>b&&b+c>a) flag=true;
+    return flag;
+}
+
+
+void Stat_Triangle(double a,double b, double c)// функция выдает сведения по треугольнику (Усложнение)
+{
+string Harakter=""; 
+double Perimetr=a+b+c;
+double X=(c*c+b*b-a*a)/(2*c);
+double High=Math.Round(Math.Sqrt(b*b-X*X),3);
+double S=High*c/2;
+if (a==b&a==c) Harakter="Треугольник равносторонний";
+else if(a==b||a==c||b==c) Harakter="Треугольник равнобедренный";
+else if(a*a==b*b+c*c||b*b==a*a+c*c||c*c==a*a+b*b) Harakter="Треугольник прямоугольный";
+else Harakter="Треугольник обычный";
+double Angle_ac=Math.Round((Math.Asin(High/a)*57.29),1);
+double Angle_bc=Math.Round((Math.Asin(High/b)*57.29),1);
+double Angle_ab=Math.Round((180-Angle_ac-Angle_bc),1);
+Console.WriteLine($"Периметр треугольника - {Perimetr}");
+Console.WriteLine($"Площадь треугольника - {S}");
+Console.WriteLine($"Угол АС треугольника - {Angle_ac} градусов");
+Console.WriteLine($"Угол ВС треугольника - {Angle_bc} градусов");
+Console.WriteLine($"Угол АB треугольника - {Angle_ab} градусов");
+Console.WriteLine(Harakter);
+}

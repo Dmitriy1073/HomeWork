@@ -211,28 +211,28 @@ void FillArraySpiral(double[,] array, int n)// Функция спирально
 // 15 18
 
 // программа закоментирована
-// Console.Clear();
-// Console.WriteLine("Введите размерность матриц");
-// int m = Convert.ToInt32(Console.ReadLine());
-// int n= m;
-// double[,] resultArray= new double[m, n];
-// double[,] array2_1 = new double[m, n];
-// Console.WriteLine("Ввод первой матрицы");
-// FillArray2DManual(array2_1);
-// double[,] array2_2 = new double[m, n];
-// Console.WriteLine("Ввод второй матрицы");
-// FillArray2DManual(array2_2);
-// Console.WriteLine("Первая матрица");
-// PrintArrayForm2D(array2_1);
-// Console.WriteLine("Вторая матрица");
-// PrintArrayForm2D(array2_2);
-// if (array2_1.GetLength(0) == array2_2.GetLength(1))
-//         {
-// 	    Proizvedenie(array2_1,array2_2,resultArray);
-//         Console.WriteLine("Результат перемножения");
-// 		PrintArrayForm2D(resultArray);
-//      	}   
-//     else Console.WriteLine(" Операция перемножения матриц невозможна ");
+Console.Clear();
+Console.WriteLine("Введите размерность матриц");
+int m = Convert.ToInt32(Console.ReadLine());
+int n= m;
+double[,] resultArray= new double[m, n];
+double[,] array2_1 = new double[m, n];
+Console.WriteLine("Ввод первой матрицы");
+FillArray2DManual(array2_1);
+double[,] array2_2 = new double[m, n];
+Console.WriteLine("Ввод второй матрицы");
+FillArray2DManual(array2_2);
+Console.WriteLine("Первая матрица");
+PrintArrayForm2D(array2_1);
+Console.WriteLine("Вторая матрица");
+PrintArrayForm2D(array2_2);
+if (array2_1.GetLength(0) == array2_2.GetLength(1))
+        {
+	    Proizvedenie(array2_1,array2_2,resultArray);
+        Console.WriteLine("Результат перемножения");
+		PrintArrayForm2D(resultArray);
+     	}   
+    else Console.WriteLine(" Операция перемножения матриц невозможна ");
 
 
 
@@ -259,9 +259,9 @@ Console.WriteLine();
 // 11 16 15 06
 // 10 09 08 07
 Console.WriteLine("Введите размерность квадратного маcсива");
-int n = Convert.ToInt32(Console.ReadLine());
-double[,] array = new double[n, n];
-FillArraySpiral(array, n);
+int l = Convert.ToInt32(Console.ReadLine());
+double[,] array = new double[l, l];
+FillArraySpiral(array, l);
 PrintArrayForm2D(array);
 
 
